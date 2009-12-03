@@ -2,6 +2,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /the new post page/i
+      new_post_path
+
     when /the homepage/i
       root_path
     when /the sign up page/i
