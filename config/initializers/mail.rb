@@ -1,7 +1,7 @@
 # Use config vars to get your Gmail credentials onto Heroku.
 # They will be automatically picked up by this file in production.
 
-# heroku config:add GMAIL_EMAIL=dcroak@example.com GMAIL_PASSWORD=password
+heroku config:add GMAIL_EMAIL=stevenderocher@gmail.com GMAIL_PASSWORD=killer
 
 require 'smtp-tls'
 
