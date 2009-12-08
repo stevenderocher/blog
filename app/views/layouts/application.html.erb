@@ -7,7 +7,14 @@
     <%= stylesheet_link_tag :flutie, 'blog2', :cache => true %>
   </head>
   <body class="<%= body_class %>">
+	
+
+	
     <div class="content">
+		<ul class="navigation">
+			<li><%= link_to_unless_current 'home', posts_path %></li>
+			<li><%= link_to_unless_current 'new post', new_post_path %></li>
+		</ul>
       <%= render :partial => 'shared/flashes' -%>
       <%= yield %>
       <%= render :partial => 'shared/javascript' %>

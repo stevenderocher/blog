@@ -1,0 +1,7 @@
+<h1>Comments</h1>
+
+<ul>
+  <% @comments.each do |comment| -%>
+    <li><%= link_to comment.body, comment_path(comment) %></li>
+  <% end -%>
+</ul>

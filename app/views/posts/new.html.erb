@@ -1,0 +1,12 @@
+<h1>New post</h1>
+
+<% semantic_form_for(@post) do |form| %>
+  <% form.inputs do %>
+    <%= form.input :title %>
+    <%= form.input :body %>
+  <% end %>
+  <% form.buttons do %>
+    <%= form.commit_button 'Create',
+          :button_html => { :disable_with => 'Please wait...' } %>
+  <% end %>
+<% end %>
