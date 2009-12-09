@@ -5,3 +5,5 @@
     <li><%= link_to post.title, post_path(post) %></li>
   <% end -%>
 </ul>
+
+<%= link_to 'subscribe', posts_path(:rss) %>

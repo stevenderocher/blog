@@ -10,6 +10,11 @@ class PostsController < ApplicationController
   end
   def index
     @posts = Post.all
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false}
+      format.xml  { render :xml => @articles.to_xml }
+    end
   end
   def create
     @post = Post.new(params[:post])
@@ -22,6 +27,11 @@ class PostsController < ApplicationController
     # @post.save
     # flash[:success] = "created!"
     # redirect_to @post
+  end
+  
+  def gen_xml
+    @xml = Builder::XmlMarkup.new
+    @posts = Post.all
   end
   
   def must_be_signed_in
