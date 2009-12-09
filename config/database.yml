@@ -10,6 +10,12 @@ development: &default
 test: &test
   <<: *default
   database: db/test.sqlite3
+  
+production:
+  adapter: mysql
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
 
 cucumber:
   <<: *test
