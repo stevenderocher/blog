@@ -7,13 +7,18 @@ class PostsController < ApplicationController
   end
   def show
     @post = Post.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false}
+      format.xml  { render :xml => @posts.to_xml }
+    end
   end
   def index
     @posts = Post.all
     respond_to do |format|
       format.html
       format.rss { render :layout => false}
-      format.xml  { render :xml => @articles.to_xml }
+      format.xml  { render :xml => @posts.to_xml }
     end
   end
   def create

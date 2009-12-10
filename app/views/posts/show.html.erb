@@ -1,4 +1,4 @@
-<%= h (@post.title) %>
+<%= link_to @post.title, post_path %>
 <%= h (@post.body) %>
 
 <%= link_to 'comment', new_post_comment_path(@post) %>
